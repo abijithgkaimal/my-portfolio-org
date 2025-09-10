@@ -1,0 +1,119 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+nav {
+  background-color: #111;
+  color: white;  
+}
+
+
+#span1 {
+    background: linear-gradient(90deg, #ff512f, #dd2476, #833ab4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: bolder;
+}
+
+
+#span2 {
+    background: linear-gradient(90deg, #ff512f, #dd2476, #833ab4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: bolder;
+}
+
+
+#line:hover {
+    color: rgb(106, 0, 255);
+
+}
+
+#liststyle li:hover {
+    color: rgb(106, 0, 255);
+
+}
+
+.head {
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
+}
+
+@media(max-width:768px) {
+
+    .head {
+        font-size: 20px;
+        font-weight: bolder;
+        color: white;
+    }
+    #img1{
+        width: 150px;
+    }
+
+    #para{
+        font-size: 20px;
+    }
+
+    #img2{
+        width: 150px;
+    }
+
+}
+
+
+#viewBTN {
+    color: white;
+    font-weight: 900;
+    border: white;
+}
+
+#viewBTN:hover {
+    color: black;
+    font-weight: 900;
+    background-color: white;
+}
+
+
+#viewBTN2 {
+    color: white;
+    font-weight: 500;
+    border: white;
+}
+
+#viewBTN2:hover {
+    color: black;
+    font-weight: 500;
+    background-color: white;
+}
+
+#contact{
+    background-color:rgba(0, 0, 0, 0.941);
+}
+
+
+.custom-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.custom-card:hover {
+  transform: translateY(-23px);
+  box-shadow: 0 15px 25px rgb(7, 78, 219); 
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
