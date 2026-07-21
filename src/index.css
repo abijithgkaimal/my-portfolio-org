@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-elms: "Elms Sans", sans-serif;
+  --color-brand-green: #9AC900;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: clip;
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Custom style for the Let's Talk button hover or visual alignment */
+.outline-btn-hover:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Justify-align hack for clean letter-spacing and spacing */
+.text-justify-custom {
+  text-align: justify;
+  text-justify: inter-word;
+}

@@ -1,0 +1,329 @@
+/* ============================= */
+/* About Section Styles           */
+/* ============================= */
+
+.about-section {
+  position: relative;
+  z-index: 2;
+  /* creates stacking context above sticky hero */
+  min-height: 100vh;
+  width: 100%;
+  background-color: #FAF6F0;
+  color: #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* ---- DESKTOP LAYOUT (visible on lg/1024px+) ---- */
+.about-desktop {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .about-desktop {
+    display: block;
+  }
+}
+
+/* Left Column: Chrome Element (Centered in columns 2 & 3, from 16.67% to 50%) */
+.about-desktop__left {
+  position: absolute;
+  left: 3%;
+  width: 47%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-desktop__element-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  width: 680px;
+  height: 680px;
+  max-width: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.about-desktop__element-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  mix-blend-mode: normal;
+}
+
+/* Right Column: Heading & Paragraphs (Spans from 50% to 83.33%) */
+.about-desktop__right {
+  position: absolute;
+  left: 60%;
+  width: 33.3333%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 0.5rem;
+}
+
+.about-desktop__heading {
+  font-family: 'Elms Sans', sans-serif;
+  font-size: 52px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: -0.02em;
+  user-select: none;
+  margin-bottom: 1.5rem;
+  text-align: right;
+  line-height: 100%;
+}
+
+.about-desktop__paragraphs {
+  width: 125%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-desktop__paragraph {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  text-align: justify;
+  text-justify: inter-word;
+  color: rgba(23, 23, 23, 0.8);
+}
+
+.about-desktop__paragraph--indent-50 {
+  text-indent: 40%;
+}
+
+.about-desktop__paragraph--indent-25 {
+  text-indent: 10%;
+}
+
+.about-desktop__bold {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+}
+
+/* ---- MOBILE & TABLET LAYOUT (visible below lg) ---- */
+.about-mobile {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 3rem 1.5rem;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .about-mobile {
+    padding: 4rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-mobile {
+    display: none;
+  }
+}
+
+.about-mobile__element-center {
+  display: flex;
+  justify-content: center;
+}
+
+.about-mobile__element-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 574 / 545;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.about-mobile__element-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  mix-blend-mode: normal;
+}
+
+.about-mobile__text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* stretch content full width */
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.about-mobile__heading {
+  font-family: 'Elms Sans', sans-serif;
+  font-size: 44px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: -0.02em;
+  user-select: none;
+  margin-bottom: 1.5rem;
+  text-align: right;
+  /* right-aligned heading */
+  line-height: 100%;
+}
+
+@media (min-width: 768px) {
+  .about-mobile__heading {
+    font-size: 52px;
+  }
+}
+
+.about-mobile__paragraphs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-mobile__paragraph {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: rgba(23, 23, 23, 0.8);
+  text-align: justify;
+}
+
+.about-mobile__paragraph--indent-10 {
+  text-indent: 10%;
+  line-height: 100%;
+}
+
+.about-mobile__paragraph--indent-5 {
+  text-indent: 5%;
+  line-height: 125%;
+}
+
+.about-mobile__bold {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  color: #000000;
+  font-size: 16px;
+}
+
+/* Download Resume Button styles */
+.about-desktop__resume-wrap {
+  width: 100%;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0%;
+  /* Aligns with the left edge of paragraph blocks */
+  box-sizing: border-box;
+}
+
+.about-mobile__resume-wrap {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0%;
+  /* Aligns with the left edge of paragraph blocks on mobile */
+  box-sizing: border-box;
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.35rem 0.35rem 0.35rem 2rem;
+  /* small padding top/bottom/right, generous padding left */
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 3.5rem;
+  gap: 1.5rem;
+  width: fit-content;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.resume-btn__circle {
+  background-color: #9AC900;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease;
+}
+
+.resume-btn:hover {
+  transform: scale(1.04);
+  background-color: #000000;
+}
+
+.resume-btn:hover .resume-btn__circle {
+  transform: scale(1.05);
+  background-color: #aadb00;
+}
+
+.resume-btn__arrow {
+  stroke: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.resume-btn:hover .resume-btn__arrow {
+  transform: translateX(3px);
+}
+
+.resume-btn:active {
+  transform: scale(0.97);
+}

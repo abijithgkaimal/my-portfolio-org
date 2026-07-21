@@ -1,0 +1,328 @@
+/* ==================================== */
+/* Sequential Tech Spotlight & Orbit    */
+/* ==================================== */
+
+:root {
+  --spotlight-radius: 220px;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --spotlight-radius: 155px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spotlight-radius: 125px;
+  }
+}
+
+.tech-spotlight-stage {
+  position: relative;
+  width: 620px;
+  height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-stage {
+    width: 420px;
+    height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-spotlight-stage {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+/* Ambient Radial Glow */
+.tech-spotlight-glow {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--brand-glow, rgba(154, 201, 0, 0.25)) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  filter: blur(40px);
+  opacity: 0.35;
+  transition: all 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Orbit Track Guide Line */
+.tech-spotlight-track {
+  position: absolute;
+  width: calc(var(--spotlight-radius) * 2);
+  height: calc(var(--spotlight-radius) * 2);
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center Spotlight Card */
+.tech-spotlight-center {
+  position: absolute;
+  z-index: 20;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--brand-color);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15), 0 0 35px var(--brand-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
+  animation: spotlightPopup 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+@keyframes spotlightPopup {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-10deg);
+  }
+  70% {
+    transform: scale(1.08) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-center {
+    width: 140px;
+    height: 140px;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-spotlight-center {
+    width: 120px;
+    height: 120px;
+    padding: 0.5rem;
+  }
+}
+
+.tech-spotlight-center-badge {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: var(--brand-bg, #f4f4f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-center-badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.tech-spotlight-center-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--brand-color);
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-center-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.tech-spotlight-center-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tech-spotlight-center-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #171717;
+  line-height: 1.1;
+  margin: 0 0 2px 0;
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-center-title {
+    font-size: 13px;
+  }
+}
+
+.tech-spotlight-center-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #71717a;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-center-sub {
+    font-size: 8.5px;
+  }
+}
+
+/* Revolving Surrounding Ring Constellation */
+.tech-spotlight-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  animation: orbitCW 35s linear infinite;
+  will-change: transform;
+}
+
+.tech-spotlight-stage:hover .tech-spotlight-ring {
+  animation-play-state: paused;
+}
+
+@keyframes orbitCW {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tech-spotlight-node-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -26px;
+  margin-left: -26px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-node-wrap {
+    margin-top: -20px;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.tech-spotlight-node-wrap--active {
+  z-index: 25;
+}
+
+/* Node Badge (Upright counter-rotation keeping equal 30° spacing) */
+.tech-spotlight-node {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--brand-color);
+  transform: rotate(calc(-1 * var(--init-angle)));
+  animation: nodeUprightCounter 35s linear infinite;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  will-change: transform;
+}
+
+@keyframes nodeUprightCounter {
+  from {
+    transform: rotate(calc(-1 * var(--init-angle)));
+  }
+  to {
+    transform: rotate(calc(-1 * var(--init-angle) - 360deg));
+  }
+}
+
+.tech-spotlight-stage:hover .tech-spotlight-node {
+  animation-play-state: paused;
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-node {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}
+
+.tech-spotlight-node:hover,
+.tech-spotlight-node--active {
+  transform: scale(1.28) rotate(calc(-1 * var(--init-angle)));
+  border-color: var(--brand-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 0 18px var(--brand-color);
+  background: var(--brand-bg);
+}
+
+.tech-spotlight-icon {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 1023px) {
+  .tech-spotlight-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Tooltip */
+.tech-spotlight-tooltip {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #000000;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tech-spotlight-node:hover .tech-spotlight-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

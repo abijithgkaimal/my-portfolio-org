@@ -1,0 +1,600 @@
+/* ============================= */
+/* Hero Section Styles            */
+/* ============================= */
+
+.hero-section {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 1;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 2rem 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        padding: 2.5rem 4rem;
+    }
+}
+
+/* Background Container - Sharp liquid silk texture */
+.hero-bg-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+}
+
+/* Content Wrapper */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 2rem;
+}
+
+/* Navigation Bar */
+.hero-nav {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    .hero-nav {
+        padding: 1.25rem 2.75rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-nav {
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-flex;
+        justify-content: center;
+    }
+}
+
+.hero-nav__location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-nav__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: #9AC900;
+    box-shadow: 0 0 8px #9AC900;
+}
+
+.hero-nav__location-text {
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-nav__links {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .hero-nav__links {
+        display: flex;
+    }
+}
+
+.hero-nav__link {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.025em;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-nav__link:hover {
+    color: #9AC900;
+}
+
+.hero-nav__link--active {
+    color: #9AC900;
+}
+
+/* ---- DESKTOP HERO ---- */
+.hero-desktop {
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero-desktop {
+        display: flex;
+    }
+}
+
+/* Intro Text Container & Divider Line 1 */
+.hero-desktop__intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.hero-desktop__intro-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    letter-spacing: 0.025em;
+}
+
+.hero-desktop__intro-text strong {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.hero-desktop__divider-line-1 {
+    width: 65%;
+    /* Spans exactly to match right edge of PRODUCT */
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin-top: 0.75rem;
+}
+
+/* Large PRODUCT Title */
+.hero-desktop__title-product {
+    font-size: 110px;
+    line-height: 100%;
+    font-weight: 700;
+    color: #9AC900;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+@media (min-width: 1024px) {
+    .hero-desktop__title-product {
+        font-size: 140px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-desktop__title-product {
+        font-size: 170px;
+    }
+}
+
+/* Divider Line Mid (between PRODUCT and DESIGNER) */
+.hero-desktop__divider-line-mid {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Designer & Paragraph Row Layout */
+.hero-desktop__designer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.hero-desktop__description {
+    /* Muted gray description text */
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+    text-align-last: left;
+    padding-bottom: 30px;
+    margin-bottom: -5px;
+    padding-right: 0.5rem;
+    text-indent: 3.5rem
+}
+
+.hero-desktop__description strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Designer Block (Title + Divider Line starting at D) */
+.hero-desktop__designer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.hero-desktop__title-designer {
+    font-size: 110px;
+    line-height: 90%;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: right;
+}
+
+@media (min-width: 1024px) {
+    .hero-desktop__title-designer {
+        font-size: 140px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-desktop__title-designer {
+        font-size: 170px;
+    }
+}
+
+.hero-desktop__divider-line-bottom {
+    width: 100%;
+    /* Spans 100% of the designer block width (starts at D) */
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin-top: 0.75rem;
+}
+
+/* Bottom Action Row */
+.hero-desktop__actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Let's Talk Circle Button */
+.hero-talk-btn {
+    position: relative;
+    width: 8.5rem;
+    height: 8.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(154, 201, 0, 0.45);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    background: transparent;
+}
+
+.hero-talk-btn:hover {
+    border-color: rgba(154, 201, 0, 0.8);
+    transform: scale(1.03);
+}
+
+.hero-talk-btn__text {
+    color: #9AC900;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    z-index: 2;
+    transition: color 0.4s ease;
+}
+
+.hero-talk-btn:hover .hero-talk-btn__text {
+    color: #000000;
+}
+
+.hero-talk-btn__circle {
+    position: absolute;
+    left: -1rem;
+    bottom: -1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    background-color: #9AC900;
+    pointer-events: none;
+    transition: transform 0.4s ease;
+}
+
+.hero-talk-btn:hover .hero-talk-btn__circle {
+    transform: scale(7);
+}
+
+/* View My Works Button */
+.hero-works-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-works-btn:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.hero-works-btn__text {
+    letter-spacing: 0.025em;
+}
+
+.hero-works-btn__icon-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background: #171717;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.hero-works-btn:hover .hero-works-btn__icon-wrap {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-works-btn__icon {
+    width: 1rem;
+    height: 1rem;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.hero-works-btn:hover .hero-works-btn__icon {
+    transform: translateX(3px);
+}
+
+/* ---- MOBILE HERO ---- */
+.hero-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-mobile {
+        display: none;
+    }
+}
+
+.hero-mobile__intro-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.hero-mobile__intro-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+}
+
+.hero-mobile__intro-text strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.hero-mobile__intro-line {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    flex-grow: 1;
+}
+
+.hero-mobile__titles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.hero-mobile__title-product {
+    font-size: 64px;
+    line-height: 95%;
+    font-weight: 700;
+    color: #9AC900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+    .hero-mobile__title-product {
+        font-size: 80px;
+    }
+}
+
+.hero-mobile__title-designer {
+    font-size: 64px;
+    line-height: 95%;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: right;
+    /* right aligned designer title */
+}
+
+@media (min-width: 640px) {
+    .hero-mobile__title-designer {
+        font-size: 80px;
+    }
+}
+
+.hero-mobile__cta-center {
+    display: flex;
+    justify-content: flex-end;
+    /* right-aligned CTA */
+    margin: 0.75rem 0;
+}
+
+.hero-mobile__works-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-mobile__works-btn:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.hero-mobile__works-btn-text {
+    letter-spacing: 0.025em;
+}
+
+.hero-mobile__works-btn-icon-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background: #171717;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-mobile__works-btn-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #ffffff;
+}
+
+.hero-mobile__description {
+    color: #a3a3a3;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.625;
+    text-align: right;
+    /* right aligned text */
+    padding: 0 0.25rem;
+}
+
+.hero-mobile__description strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.hero-mobile__talk-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.hero-mobile__talk-btn {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(154, 201, 0, 0.8);
+    /* brighter border matching Let's Talk button */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.hero-mobile__talk-btn-text {
+    color: #9AC900;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    transition: color 0.4s ease;
+    z-index: 2;
+}
+
+.hero-mobile__talk-btn:hover .hero-mobile__talk-btn-text {
+    color: #000000;
+}
+
+.hero-mobile__talk-btn-circle {
+    position: absolute;
+    left: -1rem;
+    bottom: -1rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 9999px;
+    background-color: #9AC900;
+    pointer-events: none;
+    transition: transform 0.4s ease;
+}
+
+.hero-mobile__talk-btn:hover .hero-mobile__talk-btn-circle {
+    transform: scale(7);
+}

@@ -1,0 +1,288 @@
+.contact-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3; /* stacks above sticky hero and sticky about-projects wrapper */
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 4rem 2rem;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: calc(100vh - 8rem);
+}
+
+/* Central Hero Typography */
+.contact-hero-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  /* Define base font-size for em-based fluid scaling */
+  font-size: clamp(3.2rem, 15vw, 10rem); /* scales up to 160px */
+  margin-top: -2rem;
+}
+
+.contact-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+}
+
+.contact-title--top {
+  color: #ffffff;
+  z-index: 10;
+}
+
+.contact-title--bottom {
+  color: #9AC900;
+  z-index: 30;
+  margin-top: -0.08em; /* negative margin for exact overlapping style */
+}
+
+/* Circular Avatar Image Badge */
+.contact-avatar-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 0.94em; /* Scales perfectly with font size (e.g. 150px when text is 160px) */
+  height: 0.94em;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  pointer-events: none; /* Let clicks pass through if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+}
+
+.contact-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.15) brightness(0.95);
+  object-position: center 25%;
+}
+
+/* Email Container */
+.contact-email-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5.5rem;
+  z-index: 40;
+}
+
+.contact-email-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.45;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.contact-email-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  position: relative;
+}
+
+.contact-email-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s ease;
+}
+
+.contact-email-link:hover {
+  opacity: 0.8;
+}
+
+/* Copy Button Badge */
+.contact-copy-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.contact-copy-btn {
+  background-color: #9AC900;
+  border: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease;
+}
+
+.contact-copy-btn:hover {
+  transform: scale(1.08);
+  background-color: #aadb00;
+}
+
+.contact-copy-btn:active {
+  transform: scale(0.95);
+}
+
+.contact-copy-btn svg {
+  display: block;
+}
+
+/* Tooltip */
+.contact-copy-tooltip {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background-color: #ffffff;
+  color: #171717;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.4rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-copy-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+.contact-copy-tooltip--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Floating Right-Side Social Links */
+.contact-socials-wrapper {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  z-index: 50;
+}
+
+.contact-social-link {
+  color: #9AC900;
+  text-decoration: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.contact-social-link:hover {
+  transform: translateY(-3px) scale(1.05);
+  color: #ffffff;
+}
+
+.contact-social-link:hover svg {
+  stroke: #ffffff;
+}
+
+.contact-social-svg {
+  transition: stroke 0.2s ease;
+}
+
+/* RESPONSIVE LAYOUTS */
+
+/* Mobile viewports: Reposition socials to horizontal row below email copy badge */
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-container {
+    min-height: auto;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .contact-email-container {
+    margin-top: 4rem;
+  }
+
+  .contact-email-link {
+    font-size: 1.25rem;
+  }
+
+  .contact-copy-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+  }
+
+  /* Move social links underneath email row */
+  .contact-socials-wrapper {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  .contact-social-link:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* Extra small mobile viewports */
+@media (max-width: 480px) {
+  .contact-email-link {
+    font-size: 1.1rem;
+  }
+
+  .contact-copy-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+  }
+}
