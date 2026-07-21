@@ -105,8 +105,11 @@
 .contact-email-row {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.85rem;
   position: relative;
+  max-width: 100%;
 }
 
 .contact-email-link {
@@ -117,6 +120,7 @@
   text-decoration: none;
   letter-spacing: -0.01em;
   transition: opacity 0.2s ease;
+  word-break: break-word;
 }
 
 .contact-email-link:hover {

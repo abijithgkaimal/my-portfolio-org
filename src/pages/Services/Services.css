@@ -324,6 +324,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 640px) {
+  .services-mobile-card {
+    width: 100%;
+  }
+}
+
 .services-mobile-card:not(:last-child) {
   margin-bottom: 4rem;
 }

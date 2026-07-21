@@ -57,8 +57,8 @@
 
 @media (max-width: 767px) {
   .projects-heading {
-    font-size: 44px;
-    margin-bottom: 2.5rem;
+    font-size: 36px;
+    margin-bottom: 2rem;
   }
 }
 
@@ -188,6 +188,17 @@
   letter-spacing: -0.02em;
   color: #171717;
   margin-bottom: 0.375rem;
+}
+
+@media (max-width: 767px) {
+  .project-card__title {
+    font-size: 21px;
+    line-height: 1.15;
+  }
+
+  .project-card__subtitle {
+    font-size: 14px;
+  }
 }
 
 .project-card__subtitle {

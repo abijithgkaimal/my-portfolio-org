@@ -200,7 +200,7 @@
 
 .about-mobile__heading {
   font-family: 'Elms Sans', sans-serif;
-  font-size: 44px;
+  font-size: clamp(32px, 9vw, 44px);
   font-weight: 400;
   color: #000000;
   letter-spacing: -0.02em;
@@ -226,7 +226,7 @@
 
 .about-mobile__paragraph {
   font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 1.6;
   letter-spacing: -0.02em;
@@ -235,13 +235,20 @@
 }
 
 .about-mobile__paragraph--indent-10 {
-  text-indent: 10%;
-  line-height: 100%;
+  text-indent: 5%;
+  line-height: 140%;
 }
 
 .about-mobile__paragraph--indent-5 {
-  text-indent: 5%;
-  line-height: 125%;
+  text-indent: 0%;
+  line-height: 140%;
+}
+
+@media (max-width: 480px) {
+  .about-mobile__paragraph--indent-10,
+  .about-mobile__paragraph--indent-5 {
+    text-indent: 0;
+  }
 }
 
 .about-mobile__bold {
