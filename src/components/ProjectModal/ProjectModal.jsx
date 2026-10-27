@@ -154,7 +154,18 @@ function ProjectModal({ project, onClose }) {
                   {project.features.map((feat, idx) => (
                     <li key={idx} className="project-modal-feature-item">
                       <span className="project-modal-feature-bullet">•</span>
-                      <span>{feat}</span>
+                      <span>
+                        {typeof feat === "string" && feat.includes(":") ? (
+                          <>
+                            <strong style={{ color: "#18181b", fontWeight: 600 }}>
+                              {feat.slice(0, feat.indexOf(":") + 1)}
+                            </strong>
+                            {feat.slice(feat.indexOf(":") + 1)}
+                          </>
+                        ) : (
+                          feat
+                        )}
+                      </span>
                     </li>
                   ))}
                 </ul>

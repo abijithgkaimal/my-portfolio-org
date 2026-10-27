@@ -137,7 +137,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9.2;
-  background-color: #0d0d0f;
+  background-color: #f4f4f5;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -147,7 +147,8 @@
 .project-modal-main-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   transition: opacity 0.3s ease;
 }
 

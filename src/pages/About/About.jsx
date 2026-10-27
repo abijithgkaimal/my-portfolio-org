@@ -25,7 +25,7 @@ function About() {
             </p>
 
             <p className="about-desktop__paragraph about-desktop__paragraph--indent-25">
-              Based in <span className="about-desktop__bold">Alappuzha, India</span>. Currently working as a <span className="about-desktop__bold">Full-Stack Developer at Brynex Apparels Pvt Ltd</span> and <span className="about-desktop__bold">Frontend Developer at Dopamine Couch</span>. I thrive on translating intricate business needs into clean API contracts, role-based security frameworks, and intuitive front-end applications.
+              Based in <span className="about-desktop__bold">Alappuzha, India</span>. Currently working as a <span className="about-desktop__bold">Full-Stack Developer at Brynex Apparels Pvt Ltd</span> , with previous contract contributions to client-facing health platforms like Dopamine Couch. I thrive on translating intricate business needs into clean API contracts, role-based security frameworks, and intuitive front-end architectures.
             </p>
 
             <div className="about-desktop__resume-wrap">

@@ -93,24 +93,97 @@ function Projects() {
         { label: 'Visit Zorucci ↗', url: 'https://www.zorucci.com/' },
       ],
     },
+    {
+      id: "rootfin",
+      title: "RootFin – Retail ERP & Finance Platform",
+      subtitle: "Retail ERP & Finance Platform | 2026",
+      description: "A comprehensive retail ERP and financial management platform built for multi-outlet retail chains.",
+      fullDescription: "A retail ERP and finance platform built for multi-outlet chains, covering automated Day Book accounting, inventory tracking, and synchronized store closings.",
+      image: "/project05.png",
+      images: [
+        "/rootfin/rootfin_1.png",
+        "/rootfin/rootfin_2.png",
+        "/rootfin/rootfin_3.png"
+      ],
+      technologies: [
+        "React 19",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "AWS EC2"
+      ],
+      features: [
+        "Automated Stock Engines: Real-time inventory tracking for multi-warehouse transfers, physical store adjustments, and automated reorder alerts.",
+        "AI-Accelerated Financial Logic: Rapidly scaffolded Day Book closing validations, balance carry-forwards, and in-memory cached reporting.",
+        "Role-Guarded 100+ Page SPA: Strict role-level guards, client-side caching, PDF exports, and CI/CD pipelines deploying to AWS EC2."
+      ]
+    },
+    {
+      id: "dopamine-couch",
+      title: "Dopamine Couch – Mental Health Platform",
+      subtitle: "Healthcare & Teletherapy Platform | 2026",
+      description: "A responsive, high-performance web platform designed to streamline online therapy consultations, session bookings, and mental wellness management.",
+      fullDescription: "A responsive web platform designed to streamline online therapy consultations, session bookings, and mental wellness management.",
+      image: "/project06.png",
+      images: [
+        "/dopc/dopc_1.png",
+        "/dopc/dopc_2.png",
+        "/dopc/dopc_3.png"
+      ],
+      technologies: [
+        "React.js",
+        "JavaScript",
+        "Tailwind CSS",
+        "REST APIs",
+        "Axios",
+        "Vite"
+      ],
+      features: [
+        "Accessible User Interface: Clean, modular React views focused on high usability, accessibility, and minimal cognitive load.",
+        "AI-Guided UI Optimization: Leveraged AI tools to accelerate component scaffolding and optimize client-side rendering trees.",
+        "Seamless API Integration: Connected live RESTful booking workflows and authentication with agile feedback-driven iteration."
+      ]
+    },
   ];
 
   const sectionRef = useRef(null);
 
+  const updateStickyTop = () => {
+    if (sectionRef.current) {
+      const height = sectionRef.current.scrollHeight || sectionRef.current.offsetHeight;
+      const topOffset = Math.min(0, window.innerHeight - height);
+      sectionRef.current.style.setProperty('--projects-sticky-top', `${topOffset}px`);
+    }
+  };
+
   useEffect(() => {
-    const handleResize = () => {
-      if (sectionRef.current) {
-        const height = sectionRef.current.offsetHeight;
-        // topOffset = min(0px, 100vh - height)
-        const topOffset = Math.min(0, window.innerHeight - height);
-        sectionRef.current.style.setProperty('--projects-sticky-top', `${topOffset}px`);
-      }
+    updateStickyTop();
+
+    const ro = new ResizeObserver(() => {
+      updateStickyTop();
+    });
+    if (sectionRef.current) {
+      ro.observe(sectionRef.current);
+    }
+
+    window.addEventListener('resize', updateStickyTop);
+    window.addEventListener('load', updateStickyTop);
+
+    // Multiple staggered timers for async image rendering
+    const t1 = setTimeout(updateStickyTop, 200);
+    const t2 = setTimeout(updateStickyTop, 800);
+    const t3 = setTimeout(updateStickyTop, 1500);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      ro.disconnect();
+      window.removeEventListener('resize', updateStickyTop);
+      window.removeEventListener('load', updateStickyTop);
     };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
@@ -134,6 +207,7 @@ function Projects() {
                   src={project.image}
                   alt={project.title}
                   className="project-card__img"
+                  onLoad={updateStickyTop}
                 />
                 <div className="project-card__overlay" />
 

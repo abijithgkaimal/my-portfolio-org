@@ -53,7 +53,7 @@ function Hero() {
 
           {/* Paragraph & Designer Title Row */}
           <div className="hero-desktop__designer-row">
-            <div className="hero-desktop__description">Architecting high performance production web applications, scalable API workflows, and robust backend systems. Specialized in taking end-to-end feature ownership with AI tools and frameworks with <strong>MERN stack</strong>.</div>
+            <div className="hero-desktop__description">Architecting high-performance web applications, scalable API workflows, and resilient backend systems. Specializing in end-to-end feature ownership across the <strong>MERN</strong>  ecosystem, accelerated by modern <strong>AI</strong>  tooling.</div>
 
             {/* Designer Block (Title + Bottom Line starting at D) */}
             <div className="hero-desktop__designer-block">
